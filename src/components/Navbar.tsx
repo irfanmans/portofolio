@@ -1,6 +1,7 @@
 import { IoClose, IoMenu } from "react-icons/io5";
 import Logo from "../ui/Logo";
 import { useEffect, useState } from "react";
+import iconbrand from "../assets/images/iconbrand.png";
 
 export default function Navbar() {
   const [openMenu, setOpenMenu] = useState<boolean>(false);
@@ -33,7 +34,7 @@ export default function Navbar() {
   ${scroll ? "bg-white shadow-md py-3" : "bg-transparent py-5 px-5"}`}
     >
       <div className="flex justify-between items-center px-5">
-        <Logo width={scroll ? 100 : 110} />
+        <Logo src={iconbrand} width={scroll ? 100 : 110} />
 
         <nav className="hidden md:block">
           <ul className="flex gap-5 text-sm">

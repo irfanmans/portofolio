@@ -1,8 +1,14 @@
+import { useState } from "react";
+import Button from "../ui/Button";
+import TechStack from "../components/TechStack";
+import Tools from "../components/Tools";
+
 export default function TechStackAndTools() {
+  const [active, setActive] = useState<number>(1);
   return (
     <>
-      <div className="px-4 mt-10">
-        <div>
+      <div className="px-4 mt-20">
+        <div className="text-center">
           <h1
             className="text-2xl font-bold text-yellow-500"
             data-aos="fade-right"
@@ -14,6 +20,26 @@ export default function TechStackAndTools() {
             pakai
           </p>
         </div>
+
+        <div className="flex justify-center gap-5">
+          <Button
+            type="button"
+            className={`text-gray-600 font-bold border border-gray-400 text-md rounded-lg px-4 py-1.5 mt-5 cursor-pointer ${active === 1 ? "bg-[#6052FF] text-white" : ""}`}
+            onClick={() => setActive(1)}
+          >
+            Tech Stack
+          </Button>
+          <Button
+            type="button"
+            className={`text-gray-600 font-bold border border-gray-400 text-md rounded-lg px-4 py-1.5 mt-5 cursor-pointer ${active === 2 ? "bg-[#6052FF] text-white" : ""}`}
+            onClick={() => setActive(2)}
+          >
+            Tool
+          </Button>
+        </div>
+
+        {active === 1 && <TechStack />}
+        {active === 2 && <Tools />}
       </div>
     </>
   );

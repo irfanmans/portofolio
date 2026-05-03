@@ -1,13 +1,13 @@
-import iconbrand from "../assets/images/iconbrand.png";
-
 interface LogoProps {
-  width: string | number;
+  src: string;
+  width?: string | number;
+  className?: string;
 }
 
-export default function Logo({ width }: LogoProps) {
+export default function Logo({ src, width, className }: LogoProps) {
   return (
     <>
-      <img src={iconbrand} alt="logo" width={width} />
+      <img src={src} alt="logo" width={width} className={className} />
     </>
   );
 }

@@ -8,12 +8,13 @@ import Logo from "../ui/Logo";
 import { FaPhoneAlt } from "react-icons/fa";
 import ContactInfo from "../ui/ContactInfo";
 import MediaSocialInfo from "../ui/MediaSocialInfo";
+import iconBrand from "../assets/images/iconbrand.png";
 
 export default function Footer() {
   return (
     <>
       <footer className="px-5 py-5 bg-[#152C5B]">
-        <Logo width={120} />
+        <Logo src={iconBrand} width={120} />
         <p className="text-white text-sm mt-3 mb-5">
           Personal Website cara untuk memperkenalkan diri, khususnya pengetahuan
           dan achievement yang telah didapatkan
