@@ -68,7 +68,7 @@ export default function Navbar() {
       {openMenu && (
         <nav className="absolute top-full left-0 right-0 w-full h-screen bg-white shadow-md md:hidden">
           <ul
-            className={`flex flex-col py-6 mt-50 ${scroll ? "px-6" : "px-11"} gap-5 text-lg text-center cursor-pointer`}
+            className={`flex flex-col justify-center items-center h-full gap-5 text-lg text-center cursor-pointer`}
           >
             <li>Beranda</li>
             <li>Tentang Saya</li>
