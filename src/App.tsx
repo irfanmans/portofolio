@@ -12,7 +12,9 @@ import TechStackAndTools from "./parts/TechStackAndTools";
 
 function App() {
   useEffect(function () {
-    AOS.init();
+    AOS.init({
+      once: false,
+    });
 
     AOS.refresh();
   }, []);

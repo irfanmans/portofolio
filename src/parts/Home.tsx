@@ -10,11 +10,11 @@ export default function Home() {
   });
   return (
     <>
-      <div className="py-50 px-5">
+      <div className="py-50 px-5 md:px-15" id="beranda">
         <div className="flex flex-col justify-center">
           <p className="text-gray-700 text-center">Hi, There 👋</p>
           <h1 className="text-4xl font-bold text-center mt-4 text-gray-700">
-            Saya, Front End <br />{" "}
+            I'am, Front End <br />{" "}
             <span className="bg-linear-to-r from-blue-500 to-purple-500 text-transparent bg-clip-text">
               Developer
             </span>

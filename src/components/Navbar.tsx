@@ -3,12 +3,32 @@ import Logo from "../ui/Logo";
 import { useEffect, useState } from "react";
 import iconbrand from "../assets/images/iconbrand.png";
 
+const navItems = [
+  { label: "Beranda", id: "beranda" },
+  { label: "Tentang Saya", id: "tentang-saya" },
+  { label: "Work & Education", id: "work-education" },
+  { label: "Tech Stack & Tools", id: "tech-stack" },
+  { label: "Sertifikat", id: "sertifikat" },
+  { label: "Project", id: "project" },
+  { label: "Hubungi Saya", id: "hubungi-saya" },
+];
+
 export default function Navbar() {
   const [openMenu, setOpenMenu] = useState<boolean>(false);
   const [scroll, setScroll] = useState<boolean>(false);
 
   function handleOpenMenu() {
     setOpenMenu((prev) => !prev);
+  }
+
+  function handleNavClick(id: string) {
+    const target = document.getElementById(id);
+
+    if (target) {
+      const offsetTop = target.getBoundingClientRect().top + window.scrollY;
+      window.scrollTo({ top: offsetTop - 90, behavior: "smooth" });
+    }
+    setOpenMenu(false);
   }
 
   useEffect(function () {
@@ -30,7 +50,7 @@ export default function Navbar() {
 
   return (
     <header
-      className={`w-full fixed top-0 left-0 right-0 z-50 transition-all duration-300
+      className={`w-full md:px-25 fixed top-0 left-0 right-0 z-50 transition-all duration-300
   ${scroll ? "bg-white shadow-md py-3" : "bg-transparent py-5 px-5"}`}
     >
       <div className="flex justify-between items-center px-5">
@@ -38,13 +58,15 @@ export default function Navbar() {
 
         <nav className="hidden md:block">
           <ul className="flex gap-5 text-sm">
-            <li>Beranda</li>
-            <li>Tentang Saya</li>
-            <li>Work & Education</li>
-            <li>Tech Stack & Tools</li>
-            <li>Sertifikat</li>
-            <li>Project</li>
-            <li>Hubungi Saya</li>
+            {navItems.map((item) => (
+              <li
+                key={item.id}
+                onClick={() => handleNavClick(item.id)}
+                className="cursor-pointer hover:text-yellow-500 transition-colors duration-200"
+              >
+                {item.label}
+              </li>
+            ))}
           </ul>
         </nav>
 
@@ -70,13 +92,15 @@ export default function Navbar() {
           <ul
             className={`flex flex-col justify-center items-center h-full gap-5 text-lg text-center cursor-pointer`}
           >
-            <li>Beranda</li>
-            <li>Tentang Saya</li>
-            <li>Work & Education</li>
-            <li>Tech Stack & Tools</li>
-            <li>Sertifikat</li>
-            <li>Project</li>
-            <li>Hubungi Saya</li>
+            {navItems.map((item) => (
+              <li
+                key={item.id}
+                onClick={() => handleNavClick(item.id)}
+                className="cursor-pointer hover:text-yellow-500 transition-colors duration-200"
+              >
+                {item.label}
+              </li>
+            ))}
           </ul>
         </nav>
       )}

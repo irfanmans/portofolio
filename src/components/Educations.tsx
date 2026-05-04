@@ -7,7 +7,11 @@ import { FaLocationDot } from "react-icons/fa6";
 export default function Educations() {
   return (
     <>
-      <div className="border-l-[6px] border-red-500 relative py-7 px-5 mt-10">
+      <div
+        className="border-l-[6px] border-red-500 relative py-7 px-5 mt-10"
+        data-aos="fade-up"
+        data-aos-duration="3000"
+      >
         <div className="relative">
           <div className="absolute -left-8.75">
             <Dot />

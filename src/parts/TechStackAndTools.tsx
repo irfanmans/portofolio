@@ -7,7 +7,7 @@ export default function TechStackAndTools() {
   const [active, setActive] = useState<number>(1);
   return (
     <>
-      <div className="px-4 mt-20">
+      <div className="px-4 mt-20 md:px-30" id="tech-stack">
         <div className="text-center">
           <h1
             className="text-2xl font-bold text-yellow-500"
